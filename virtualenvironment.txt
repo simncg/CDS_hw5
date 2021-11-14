@@ -15,7 +15,7 @@ conda create --name virtualenv_hw5 python=3.8.11
 conda activate virtualenv_hw5
 
 # 3. Install in the new environment all packages needed, for example:
-pip install sklearn numpy seaborn matplotlib jupyter
+pip install sklearn numpy seaborn matplotlib jupyter pandas
 
 # To see the installed packages 
 conda list
