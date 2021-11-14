@@ -14,13 +14,13 @@
 
 def car_at_light(light):
     if light == 'red':
-        return print('stop')
+        return 'stop'
     elif light == 'yellow':
-        return print('wait')
+        return 'wait'
     elif light == 'green':
-        return print('go')
+        return 'go'
     else:
-        return print('Undefined instruction for color: '+light)
+        return 'Undefined instruction for color: '+light
         
 car_at_light('black')
 
@@ -35,13 +35,13 @@ car_at_light('black')
 
 def safe_subtract(x,y):
     try:
-        return print(y-x)
-    except TypeError:
-        print(None)
+        return y-x
+    except (TypeError):
+        return None
     except (NameError, ValueError, IndexError, KeyError) as err:
         print({err})
     
-safe_subtract('1', 2)
+safe_subtract('10', 2)
 
 
 # 3)
@@ -59,17 +59,17 @@ person_f = {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
 def retrieve_age_eafp(dict):
     try:
         age = 2021 - dict['birth']
-        print (age)
+        return age
     except KeyError:
-        print("Keys for calculating age are missing")
+        return "Keys for calculating age are missing"
 
 #LBYL
 def retrieve_age_lbyl(dict):
     if 'birth' in dict:
         age = 2021 - dict['birth']
-        print (age)  
+        return age  
     else:
-       print("Keys for calculating age are missing") 
+       return "Keys for calculating age are missing"
 
 retrieve_age_eafp(person_m)
 retrieve_age_lbyl(person_m)
@@ -87,7 +87,7 @@ def read_data(file):
     try:
        df = pd.read_csv(file) 
     except FileNotFoundError:
-       print('The file does not exists in the directory') 
+       return 'The file does not exists in the directory'
       
 read_data('sample.csv')
 
@@ -171,9 +171,10 @@ def get_day_month_year(x):
     df['month'] = df['x'].dt.strftime('%m')
     df['day'] = df['x'].dt.strftime('%d')
     df = df.drop(columns='x')
-    return df.head()
+    return df
 
-get_day_month_year(dates)
+x = get_day_month_year(dates)
+x
 
 
 # 8) 
@@ -187,12 +188,11 @@ get_day_month_year(dates)
 location = [((41.23,23.5), (41.5, 23.4)), ((52.38, 20.1), (52.3, 17.8))]
 
 from geopy import distance
-def compute_distance(x):
-    return distance.distance(x[0], x[1]).km
-  
-dist = map(compute_distance, location)
-list(dist) 
-  
+def compute_distance(m):
+    return list(map(lambda x: distance.distance(x[0], x[1]).km, m))
+
+compute_distance(location)
+
 #################################################
 # 9)
 # Consider a list that each element can be an integer or
