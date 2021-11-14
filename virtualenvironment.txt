@@ -4,20 +4,19 @@
 
 # Use the terminal or an Anaconda Prompt for the following steps:
 
-
-# 1. Create an environment with a specific python version (you can change to the version that you need)
+# 1. Create an environment with a specific python version (you can change to the version that you need):
 conda create --name virtualenv_hw5 python=3.8.11
 
 # Now the environment is located into the envs directory in the conda directory.
 # This creates the virtualenv_hw5 environment in /envs/. No packages have been installed in this environment.
 
-# 2. Activate the environment 
+# 2. Activate the environment :
 conda activate virtualenv_hw5
 
 # 3. Install in the new environment all packages needed, for example:
 pip install sklearn numpy seaborn matplotlib jupyter pandas
 
-# To see the installed packages 
+# To see the installed packages :
 conda list
 
 
