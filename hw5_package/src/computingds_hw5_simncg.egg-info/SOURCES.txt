@@ -5,8 +5,10 @@ setup.py
 src/computingds_hw5_simncg.egg-info/PKG-INFO
 src/computingds_hw5_simncg.egg-info/SOURCES.txt
 src/computingds_hw5_simncg.egg-info/dependency_links.txt
+src/computingds_hw5_simncg.egg-info/requires.txt
 src/computingds_hw5_simncg.egg-info/top_level.txt
 src/hw5_library/__init__.py
+src/hw5_library/hw5_ex5_Caicedo_Eslava_Stassinos.py
 src/hw5_library/clean_data/__init__.py
 src/hw5_library/clean_data/dummy_creation/__init__.py
 src/hw5_library/clean_data/dummy_creation/dummy_creation.py
@@ -20,5 +22,6 @@ src/hw5_library/load_data/load_diabetes_data.py
 src/hw5_library/metrics/__init__.py
 src/hw5_library/metrics/roc_auc_plot.py
 src/hw5_library/metrics/roc_auc_score.py
+src/hw5_library/metrics/setup.py
 src/hw5_library/trainning_predictions/__init__.py
 src/hw5_library/trainning_predictions/train_get_predictions.py
