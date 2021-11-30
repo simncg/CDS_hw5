@@ -1,3 +1,6 @@
+
+ 
+
 # 1)
 # Create a function called "car_at_light"
 # It should take one parameter: "light"
@@ -20,9 +23,9 @@ def car_at_light(light):
     elif light == 'green':
         return 'go'
     else:
-        return 'Undefined instruction for color: '+light
+        raise Exception('Undefined instruction for color: '+light)
         
-car_at_light('black')
+#car_at_light('black')
 
 # 2)
 # Create a function named "safe_subtract" that
@@ -38,11 +41,11 @@ def safe_subtract(x,y):
         return y-x
     except (TypeError):
         return None
-    except (NameError, ValueError, IndexError, KeyError) as err:
-        print({err})
+    except Exception as err:
+        print(err)
     
-safe_subtract('10', 2)
-
+#safe_subtract(None, 2)
+    
 
 # 3)
 # Imagine you have a dictionary with the attributes of a person
@@ -71,8 +74,8 @@ def retrieve_age_lbyl(dict):
     else:
        return "Keys for calculating age are missing"
 
-retrieve_age_eafp(person_m)
-retrieve_age_lbyl(person_m)
+# retrieve_age_eafp(person_m)
+# retrieve_age_lbyl(person_m)
 
 
 # 4)
@@ -85,11 +88,11 @@ import pandas as pd
 
 def read_data(file):
     try:
-       df = pd.read_csv(file) 
+        return pd.read_csv(file) 
     except FileNotFoundError:
-       return 'The file does not exists in the directory'
+        raise
       
-read_data('sample.csv')
+      
 
 
 # 5) Squash some bugs! 
@@ -103,7 +106,7 @@ for elem in [10, 5, 2]:
     double = elem * 2
     #total_double_sum += elem
     total_double_sum += double
-
+    
 ### (b)
 # The code is missing an "s" in the last line, which is the only letter that
 # differentiates the objects
@@ -139,13 +142,13 @@ for elem in [1, 5, 25]:
 #
 
 slist = ["Simba and Nala are lions.", "I laugh in the face of danger.", "Hakuna matata", 
-     "Timon, Pumba and Simba are friends, but Simba could eat the other two."] 
+     "Timon, Pumba and Simba are friends, but Simba could eat the other two.", "Simba Simba"] 
 
 def count_simba(x):
-    return x.count('Simba')
+    return sum(map(lambda y : y.split().count("Simba") , x))
    
-result = map(count_simba, slist)
-list(result) 
+count_simba(slist)
+
 
     
 # 7)
@@ -158,24 +161,25 @@ list(result)
 
 import datetime
 
-#create a list of dates
+def get_day_month_year(x):
+    df = pd.DataFrame({'x': x})
+    df['day'] = df['x'].dt.strftime('%d')
+    df['month'] = df['x'].dt.strftime('%m')
+    df['year'] = df['x'].dt.strftime('%Y')
+    df = df.drop(columns='x')
+    return df
+
+
+
 today = datetime.datetime(2021, 11, 14)
 dates = [today]
 for i in range(1, 5):
     date = today - datetime.timedelta(days=i)
     dates.append(date)
     
-def get_day_month_year(x):
-    df = pd.DataFrame({'x': dates})
-    df['year'] = df['x'].dt.strftime('%Y')
-    df['month'] = df['x'].dt.strftime('%m')
-    df['day'] = df['x'].dt.strftime('%d')
-    df = df.drop(columns='x')
-    return df
-
 x = get_day_month_year(dates)
 x
-
+                     
 
 # 8) 
 # Create a function called "compute_distance" that takes
@@ -217,4 +221,7 @@ def sum_general_int_list(listn):
             r += sum_general_int_list(x)
     return r
 
+sum_general_int_list(list_0)
 sum_general_int_list(list_1)
+
+
