@@ -63,9 +63,7 @@ class Test_HW5(unittest.TestCase):
     def test_get_day_month_year(self):
         dates = [datetime.datetime(2021, 11, 14), datetime.datetime(2021, 11, 13)]
         output = get_day_month_year(dates)
-        # do we want numbers to be objects or int??
         expected_output = pd.DataFrame({'day': ['14', '13'], 'month': ['11', '11'], 'year': ['2021', '2021']})
-        # not sure if this works with unittest
         assert_frame_equal(output, expected_output)
         
     # Exercise 8
