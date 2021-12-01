@@ -24,7 +24,3 @@ pip install -i https://test.pypi.org/simple/ computingds-hw5-simncg==0.0.2
 5. The jupyter notebook for solving exercise 7 is `Diabetes Prediction.ipynb`
 
 6. The file `hw5_ex5_Caicedo_Eslava_Stassinos.py` has the solutions for `hw5.py`
-
-7. The file `hw5_ex5_Tests.py` permits to test for the functions in `hw5_ex5_Caicedo_Eslava_Stassinos.py`.
-
-
