@@ -43,6 +43,7 @@ def safe_subtract(x,y):
         return None
     except Exception as err:
         print(err)
+        raise 
     
 #safe_subtract(None, 2)
     

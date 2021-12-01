@@ -24,6 +24,8 @@ class Test_HW5(unittest.TestCase):
         expected_output = -5
         self.assertEqual(output,expected_output)
         self.assertIsNone(safe_subtract('x', y))
+        with self.assertRaises(Exception):
+            safe_subtract(1, 2/0)
         
     #Exercise 3
     
@@ -82,13 +84,3 @@ class Test_HW5(unittest.TestCase):
         self.assertEqual(output, expected_output)
                  
             
-# Test_HW5().test_car_at_light() 
-# Test_HW5().test_safe_subtract()  
-# Test_HW5().test_retrieve_age_lbyl()
-# Test_HW5().test_retrieve_age_eafp()
-# Test_HW5().test_count_simba() 
-# Test_HW5().test_sum_general_int_list()         
-Test_HW5().test_read_data()
-# Test_HW5().test_get_day_month_year()
-# Test_HW5().test_compute_distance()
-
