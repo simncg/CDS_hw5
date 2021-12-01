@@ -55,24 +55,23 @@ def safe_subtract(x,y):
 # Name the first function "retrieve_age_eafp" and follow EAFP
 # Name the second function "retrieve_age_lbyl" and follow lbyl
 
-person_m = {'name': 'John', 'last_name': 'Doe', 'birth': 1987}
-person_f = {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
-
+from datetime import datetime 
+person1 = {'name': 'John', 'last_name': 'Doe', 'birth': 1987}
+person2 = {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
 #EAFP
 def retrieve_age_eafp(dict):
     try:
-        age = 2021 - dict['birth']
+        age = datetime.datetime.now().year - dict['birth']
         return age
-    except KeyError:
-        return "Keys for calculating age are missing"
-
+    except KeyError as e:
+        print(e, 'Keys for calculating age are missing')
+        raise
 #LBYL
-def retrieve_age_lbyl(dict):
-    if 'birth' in dict:
-        age = 2021 - dict['birth']
-        return age  
+def retrieve_age_lbyl(person):
+    if 'birth' in person:
+        return datetime.datetime.now().year-person['birth']
     else:
-       return "Keys for calculating age are missing"
+        raise KeyError('birth not defined')
 
 # retrieve_age_eafp(person_m)
 # retrieve_age_lbyl(person_m)

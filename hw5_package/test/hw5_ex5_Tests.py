@@ -1,7 +1,8 @@
 import unittest
 import pytest
 from pandas.util.testing import assert_frame_equal
-import hw5_ex5_Caicedo_Eslava_Stassinos
+from hw5_library.hw5_ex5_Caicedo_Eslava_Stassinos import *
+import pandas as pd
 
 # TESTS 
 
@@ -81,13 +82,13 @@ class Test_HW5(unittest.TestCase):
         self.assertEqual(output, expected_output)
                  
             
-Test_HW5().test_car_at_light() 
+# Test_HW5().test_car_at_light() 
 # Test_HW5().test_safe_subtract()  
 # Test_HW5().test_retrieve_age_lbyl()
 # Test_HW5().test_retrieve_age_eafp()
 # Test_HW5().test_count_simba() 
 # Test_HW5().test_sum_general_int_list()         
-# Test_HW5().test_read_data()
+Test_HW5().test_read_data()
 # Test_HW5().test_get_day_month_year()
 # Test_HW5().test_compute_distance()
 

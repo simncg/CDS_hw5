@@ -1,4 +1,12 @@
+import os
+import sys
 import setuptools
+#import hw5_library
+
+
+base_dir = os.path.dirname(__file__)
+src_dir = os.path.join(base_dir, 'src')
+sys.path.insert(0, src_dir)
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -23,7 +31,7 @@ setuptools.setup(
     ],
     setup_requires = ['pytest-runner', 'wheel'],
     package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    packages=find_packages(where='src', exclude=['tests']),
     python_requires=">=3.6",
     install_requires = get_requirements()
 )
