@@ -21,4 +21,6 @@ pip install -i https://test.pypi.org/simple/ computingds-hw5-simncg==0.0.2
 ```
 4. Data used is `sample_diabetes_mellitus_data`
 
-4. The jupyter notebook for solving exercise 7 is `Diabetes Prediction.ipynb`
+5. The jupyter notebook for solving exercise 7 is `Diabetes Prediction.ipynb`
+
+6. The file `hw5_ex5_Caicedo_Eslava_Stassinos.py` has the solutions for `hw5.py`
